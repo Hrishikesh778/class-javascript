@@ -50,13 +50,15 @@ console.log(htmlBatch)
 jsBatchObj = {
     fname : "Ria",
     lname : "gupta",
-    11 : 11
+    11 : 11,
+    num : 12
 }
 
 console.log(jsBatchObj.fname)
 console.log(jsBatchObj.lname)
 console.log(jsBatchObj.age)
 console.log(jsBatchObj[11])
+console.log(jsBatchObj.num)
 
 // fname = "krishna"
 mNumber = 54345
