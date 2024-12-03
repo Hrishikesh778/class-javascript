@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        data1 = Number(prompt("enter num1"))
+        data2 = Number(prompt("enter num2"))
+        operater =prompt("Enter operator =")
+        switch (operater) {
+            case "+":
+                console.log(data1, "+", data2, "=", data1 + data2);
+                break;
+
+            case "-":
+                console.log(data1, "-", data2, "=", data1 - data2);
+                break;
+
+            case "*":
+                console.log(data1, "*", data2, "=", data1 * data2);
+                break;
+
+            case "/":
+                console.log(data1, "/", data2, "=", data1 / data2);
+                break;
+
+            case "%":
+                console.log(data1, "%", data2, "=", data1 % data2);
+                break;
+            default:
+                console.log("invalid input")
+        }
+    </script>
+</body>
+
+</html>
