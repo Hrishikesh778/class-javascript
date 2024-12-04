@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //type 1 function
+         function sum(fname, age, number, addr){
+            console.log("Hello "+ fname + "your age is " + age + " and your mobile number is " + number + "and your address is" + addr   )
+        }
+
+        sum("hardik", 12, 12345566, "thane west")
+        sum("Yash", 12, 12345566, "thane west")
+        sum("Sam", 12, 12345566, "thane west")
+        sum("Kunal", 12, 12345566, "thane west")
+
+
+          // function with default argument 
+        function welcome(fname = "hardik"){
+            console.log(fname)
+        }
+
+        welcome()
+        welcome("sam")
+
+
+        //type 3
+        function multiply(a,b) {
+            var c = a*b
+            // console.log(c)
+            console.log("before return")
+            return c
+            console.log("after return")
+        }
+
+
+        console.log(multiply(3,3))
+        let result = multiply(3,3)
+        console.log(result,"result")
+
+
+        function sub(a,b){
+            let c= a-b
+            return c
+        }
+
+        console.log(sub(3,1))
+
+
+
+        //type ... arrow function
+
+        let division = (num) => {
+           return (num + 1) 
+
+        } 
+
+        console.log(division(23))
+
+        // division = () => {
+
+        // }
+    </script>
+</body>
+</html>
