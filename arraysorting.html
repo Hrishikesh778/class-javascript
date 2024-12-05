@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //ascending
+        let ar = [5, 2, 8, 7, 1, 0];
+        let tempo = 0;
+
+
+        for (let i = 0; i < ar.length; i++) {
+            for (let j = 0; j < ar.length; j++) {
+                if (ar[j] > ar[i]) {
+                    tempo = ar[i];
+                    ar[i] = ar[j];
+                    ar[j] = tempo;
+                }
+            }
+        }
+        console.log("ascending: ", ar);
+
+        //descending
+        let a = [53, 11, 34, 12, 18];
+        let temp = 0;
+        for (let i = 0; i < a.length; i++) {
+            for (let j = 0; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+
+        console.log("descending: ", a);
+
+
+        /////max///////
+
+        let array1 = [49, 52, 53, 11, 34, 12, 18];
+        let max = array1[0]
+        for (let i = 0; i < array1.length; i++) {
+
+            if (array1[i] > max) {
+                max = array1[i]
+            }
+
+        }
+        console.log(max)
+
+
+
+        ///Second max/////
+
+
+        let array3 = [53, 11, 34, 12, 18];
+        //let secondmax = array3[0]
+
+
+        let temp1 = 0;
+
+
+        for (let i = 0; i < array3.length; i++) {
+            for (let j = 0; j < array3.length; j++) {
+                if (array3[j] < array3[i]) {
+                    temp1 = array3[i];
+                    array3[i] = array3[j];
+                    array3[j] = temp1;
+                }
+            }
+        }
+
+        console.log(array3[1])
+
+
+
+
+
+
+
+
+        ////min
+
+        let array2 = [53, 11, 34, 12, 18];
+        let min = 0
+        let temp2 = 0;
+
+
+        for (let i = 0; i < array2.length; i++) {
+            for (let j = 0; j < array2.length; j++) {
+                if (array2[j] > array2[i]) {
+                    temp2 = array2[i];
+                    array2[i] = array2[j];
+                    array2[j] = temp2;
+                }
+            }
+        }
+        console.log(array2[0])
+
+        //delete last index value
+
+        let array8 = [53, 11, 34, 12, 18];
+        //let last =array8.length
+        for (let i = 0; i < array8.length; i++) {
+            if (array8.length == array8.length) {
+                delete array8[array8.length-1];
+            }
+        }
+        console.log("array 8th :" + array8)
+
+    </script>
+</body>
+
+</html>
