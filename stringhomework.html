@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let str = "9029728398";
+        let finalstr = "";
+        let len = str.length
+
+        let x = str.slice(0, 2)
+        finalstr = finalstr + x
+        for (let i = 2; i < len - 2; i++) {
+
+
+            // if(str.charAt[i]==str[0]){//|| str[1] || str.length-1 || str.length-2){
+
+            // finalstr=finalstr+str[i];
+            // }
+            // else{
+            finalstr = finalstr + "*";
+            // }
+        }
+        let y = str.slice(8, 10)
+        finalstr = finalstr + y
+        console.log(finalstr)
+
+        //////////////////////email
+
+        let email = "hrishi778@gmail.com";
+        let val = email.split("@");
+
+        let a = val[0].toString();
+        let p = val[1].toString();
+
+        let c= a.slice(0,2);
+        let finalstr2="";
+        finalstr2=finalstr2 + c;
+        for(i=2;i<a.length-2;i++)
+        {
+            finalstr2 = finalstr2 +"*";
+        }
+
+        let b=a.substr(-2,a.length);
+
+        finalstr2=finalstr2 + b;
+
+        console.log(finalstr2+"@"+p)
+
+
+    </script>
+</body>
+
+</html>
