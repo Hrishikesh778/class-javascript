@@ -10,34 +10,27 @@
 <body>
     <script>
         let j = 0
-
+        let id2;
 
         function sum() {
             j++;
             console.log(j)
-            // if(i==10){
-            //     clearInterval(id2)
-            // }
 
-        }
-        let id2;
-        for (let i = 0; i <= 10; i++) {
-            id2 = setInterval(sum, 10000)
-            if (i % 11 == 0) {
-                clearInterval(id2)
-                // id2 = setInterval(sum, 100000)
+            if (j % 10 == 0) {
+                clearInterval(id2);
+                id2 = setInterval(sum, 10000);
             }
-           
-            //clearInterval(id2)
+            else {
+                clearInterval(id2);
+                id2 = setInterval(sum, 1000);
+            }
+
 
         }
 
 
 
-
-
-
-
+        id2 = setInterval(sum, 1000);
 
     </script>
 </body>
