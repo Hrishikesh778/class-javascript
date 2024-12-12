@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let j = 0
+
+
+        function sum() {
+            j++;
+            console.log(j)
+            // if(i==10){
+            //     clearInterval(id2)
+            // }
+
+        }
+        let id2;
+        for (let i = 0; i <= 10; i++) {
+            id2 = setInterval(sum, 10000)
+            if (i % 11 == 0) {
+                clearInterval(id2)
+                // id2 = setInterval(sum, 100000)
+            }
+           
+            //clearInterval(id2)
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

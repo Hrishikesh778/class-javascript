@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="text"></h1>
+    <script>
+
+        // console.log(date.getDate())
+        // console.log(date.getMonth()+1)
+        // console.log(date.getDay())
+        // console.log(date.getHours())
+        // console.log(date.getMinutes())
+        // console.log(date.getSeconds())
+        // console.log(date.getMilliseconds())
+
+        function sum() {
+            let date = new Date()
+
+
+            let hr = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+
+            //console.log(`${hr} : ${min} : ${sec}`)
+            document.getElementById('text').innerHTML = `${hr} : ${min} : ${sec}`;
+
+        }
+
+
+        let id2 = setInterval(sum, 1000)
+
+    </script>
+</body>
+
+</html>

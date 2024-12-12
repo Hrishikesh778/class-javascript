@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="pp()">Clear timeout</button>
+    <script>
+        // function fun1(){
+        //     console.log("first");
+        // }
+        // let id1 = setTimeout(fun1, 5000);
+        // console.log(id1);
+
+
+        // function pp(){
+        //     clearTimeout(id1)
+        // }
+        let i=0
+        console.log(1)
+        
+       function sum () {
+            i++;
+            console.log(i)
+            if(i==10){
+                clearInterval(id2)
+            }
+        }
+
+
+        let id2 = setInterval(sum, 1000)
+        
+        console.log(2)
+
+        function pp(){
+            clearInterval(id2)
+        }
+
+    </script>
+</body>
+</html>
