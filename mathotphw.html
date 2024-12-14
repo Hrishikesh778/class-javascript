@@ -16,7 +16,7 @@
 
         if(arr.includes(value)==true){
             console.log("welcome to the class");
-            console.log("this is your otp : " + generateOTP(4))
+            console.log("this is your otp : " + generateOTP())
         }
         else{
             console.log("you are not a student");
@@ -25,10 +25,10 @@
 
 
 
-        function generateOTP(limit) {
+        function generateOTP() {
 
             let otp = '';
-            for (let i = 0; i < limit; i++) {
+            for (let i = 0; i < 4; i++) {
                 otp = otp + Math.floor(Math.random() * 10);
             }
             return otp;
