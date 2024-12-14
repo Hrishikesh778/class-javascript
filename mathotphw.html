@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let value = "";
+        let arr = ["hrishikesh", "atiq", "bhushan", "sam"]
+        value = prompt("enter your name:")
+
+        if(arr.includes(value)==true){
+            console.log("welcome to the class");
+            console.log("this is your otp : " + generateOTP(4))
+        }
+        else{
+            console.log("you are not a student");
+        }
+       
+
+
+
+        function generateOTP(limit) {
+
+            let otp = '';
+            for (let i = 0; i < limit; i++) {
+                otp = otp + Math.floor(Math.random() * 10);
+            }
+            return otp;
+        }
+    </script>
+</body>
+
+</html>
