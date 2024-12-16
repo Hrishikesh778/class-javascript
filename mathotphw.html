@@ -16,13 +16,28 @@
 
         if(arr.includes(value)==true){
             console.log("welcome to the class");
-            console.log("this is your otp : " + generateotp())
+            let otp=generateotp();
+            console.log("this is your otp : " + otp)
+            setTimeout(correctotp,2000,otp)
+            
+
         }
         else{
             console.log("you are not a student");
         }
        
 
+
+        function correctotp(otp){
+            let val=prompt("enter your otp:")
+            if(val==otp){
+                console.log("otp accepted")
+            }
+            else{
+                console.log("otp not valid")
+            }
+        }
+        
 
 
         function generateotp() {
