@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOASDFGHJKLXCVBNM@#$%^&*()P';
+        let capcha = ''
+        for(let i =0; i<=5; i++){
+            capcha = capcha + data.charAt(Math.ceil(Math.random()*data.length))
+        }
+        console.log(capcha,"capcha")
+    
+        console.log(data.length,"len")
+    </script>
+</body>
+</html>

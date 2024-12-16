@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var b = 10
+        console.log(this.b)
+        // console.log(this.document.write("fdbvjhf"))
+
+        function sum() {
+            let a = 90
+            console.log(this.a, "inside function")
+        }
+
+        sum()
+
+        var name = "kunal"
+        let obj = {
+            name: "jai",
+            age: 12,
+            fun: function fname() {
+                console.log(this.name)
+            }
+        }
+
+        console.log(obj.fun(), "fun")
+
+
+        const data = () => {
+            console.log(this.name, "fhvbdh")
+        }
+
+        data()
+    </script>
+</body>
+</html>
