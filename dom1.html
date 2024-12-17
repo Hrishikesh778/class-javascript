@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="demo">this is headding</h1>
+    <p class="para">this is para</p>
+    <p class="para">this is para 2</p>
+
+    <p>this is para 3</p>
+
+    <div class="box">
+        <p>i am para from div</p>
+        <p>i am para2 from div</p>
+    </div>
+
+    <p id="thepara">outside <i style="display: none;">div</i></p>
+
+
+    <script>
+        let data = document.getElementById('demo').innerHTML="i changed this content"
+        console.log(data)
+
+        let parra = document.getElementsByClassName('para')//.innerHTML ="hi class"
+        let para1=parra[0].innerHTML;
+        console.log(parra, "para")
+        console.log(para1, "para")
+
+        let p = document.getElementsByTagName('p')[0].innerHTML='hellooooooooo'
+        console.log(p, "p")
+
+
+        let elem = document.querySelector(".box p")//.innerHTML
+        console.log(elem,"query selector elem")
+
+        let elem1 = document.querySelectorAll(".para")//.innerHTML
+        console.log(elem1)
+
+        data=document.getElementById('thepara').style.backgroundColor='red'
+        
+        data=document.getElementById('thepara')
+
+        data.style.border = '3px solid green'
+        data.style.borderRadius = '30px'
+        data.style.padding = '4px'
+
+        data=document.getElementById('thepara').innerText
+        console.log(data)
+        data=document.getElementById('thepara').textContent
+        console.log(data)
+
+    </script>
+</body>
+</html>
