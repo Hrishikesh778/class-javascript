@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body id="body">
-    <button onclick="white()">White</button>
-    <button onclick="black()">Black</button>
-    <button onclick="green()">green</button>
-    <button onclick="yellow()">yellow</button>
-    <br>
-    this is text
+  <button onclick="fun('white')">White</button>
+  <button onclick="fun('black')">Black</button>
+  <button onclick="fun('green')">green</button>
+  <button onclick="fun('yellow')">yellow</button>
+  <br>
+  this is text
 
-<script>
-   function black(){
-     document.getElementById('body').style.backgroundColor='black'
-     document.getElementById('body').style.color='white'
-   }
+  <script>
 
-   function green(){
-     document.getElementById('body').style.backgroundColor='green'
-     document.getElementById('body').style.color='white'
-   }
-   function white(){
-     document.getElementById('body').style.backgroundColor='white'
-     document.getElementById('body').style.color='black'
-   }
+    function fun(value) {
+      let body = document.getElementById('body')
 
-   function yellow(){
-     document.getElementById('body').style.backgroundColor='yellow'
-     document.getElementById('body').style.color='black'
-   }
+      body.style.backgroundColor = value
 
-</script>
+      if (value == 'black' || value == 'green') {
+        body.style.color = 'white'
+      }
+      else if (value == 'yellow' || value == 'white') {
+        body.style.color = 'black'
+      }
+    }
+  </script>
 
 </body>
+
 </html>
