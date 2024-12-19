@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img id="img" src="" alt="">
+    <div class="pp">
+        <p>Hardik</p>
+        <div id="parent">
+            <h1>Ankush</h1>
+            <h1>Hrishikesh</h1>
+            <h1>Atiq</h1>
+            <h1>Yogesh</h1>
+            <h1 id="fname">Vashu</h1>
+            <h1>Pritesh</h1>
+            <h1>Vivek</h1>
+            <h1>Shrusti</h1>
+            <h1>BB</h1>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let parent = document.getElementById('parent')
+        let fname = document.getElementById('fname')
+
+        console.log(parent, "parent")
+
+        value = parent.childNodes
+        value = parent.children
+        value = fname.previousSibling
+        value = fname.previousElementSibling.previousElementSibling.innerHTML = "kunal"
+        value = fname.nextSibling
+        value = fname.nextElementSibling.nextElementSibling
+        value = fname.parentElement.parentElement
+
+        value = fname.parentElement.parentElement.children[0].id = "uu"
+        value = fname.parentElement.parentElement.children[0].className = "qq"
+        value = fname.parentElement.parentElement.children[0]
+
+
+        img = document.getElementById('img')
+        img.setAttribute("src", "images/camera.jfif")
+        img.setAttribute("alt", "A girl with a camera")
+
+        data = img.getAttribute('src')
+        console.log(data)
+        console.log(value)
+
+    </script>
+</body>
+
+</html>

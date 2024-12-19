@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn" onclick="fun()">create Element</button>
+
+    <script>
+        btn.addEventListener("click", function hh() {
+            console.log('first')
+        })
+
+
+
+        //to add h1
+        // function fun() {
+        //     let elem = document.createElement("h1")
+        //     let text = document.createTextNode("This is a heading")
+        //     elem.append(text)
+        //     console.log(elem)
+
+        //     document.body.appendChild(elem)
+        // }
+
+
+        //to add ul li
+
+        let ul = document.createElement("ul")
+        function fun() {
+            let li = document.createElement("li")
+            let text = document.createTextNode("Home")
+
+            li.append(text)
+            ul.appendChild(li)
+            console.log(ul)
+
+            document.body.appendChild(ul)
+
+            ul.id = 'nav'
+            
+            document.querySelector('#nav').style.color = 'red';
+            document.querySelector('#nav').style.listStyle = 'none'
+            document.querySelector('#nav').style.display = 'flex'
+            document.querySelector('#nav').style.justifyContent = 'center'
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="fun()">
+
+    <div id="pp" style="height: 100px; width: 400px; background-color: aqua; display: none;">
+        <button onclick="clos()">Close</button>
+    </div>
+
+    <script>
+        function fun() {
+            setTimeout(function hb() {
+                console.log("first")
+                document.getElementById('pp').style.display = "block"
+                document.getElementById('pp').style.transitionDuration = "5s"
+                document.getElementById('pp').style.transitionDelay = "5s"
+            }, 3000)
+        }
+
+
+
+        function clos() {
+            document.getElementById('pp').style.display = "none"
+            document.getElementById('pp').style.transitionDuration = "5s"
+            document.getElementById('pp').style.transitionDelay = "5s"
+        }
+    </script>
+</body>
+
+</html>
