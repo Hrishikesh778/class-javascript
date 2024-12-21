@@ -34,6 +34,7 @@
             div.style.width = "400px"
             div.id = "newid" + (counter)
             div.style.margin="1px"
+            div.style.display="flex"
             // div.style.backgroundColor = "aqua"
             let att=div.id
 
@@ -44,6 +45,7 @@
             button1.innerHTML = "<i class='fa-solid fa-check'></i>"
             button1.style.height = "100%"
             button1.style.width = "20%"
+          
             button1.setAttribute("onClick", "create(note"+ counter +","+att+")");
             button1.className = "create1"
 
@@ -59,13 +61,25 @@
             button2.setAttribute("onClick", "delete1("+ att +")");
         
 
-            let input = document.createElement("input")
-            input.type = 'text'
+            // let input = document.createElement("input")
+            // input.type = 'text'
+            // input.style.height = "100%"
+            // input.style.width = "60%"
+            // input.id="note" + (counter)
+            // input.value=document.getElementById('todo').value
+            // input.setAttribute("disabled", "");
+
+            let input = document.createElement("div")
             input.style.height = "100%"
             input.style.width = "60%"
+            input.style.border = "1px solid"
             input.id="note" + (counter)
-            input.value=document.getElementById('todo').value
-            input.setAttribute("disabled", "");
+            input.style.backgroundColor="#efefef"
+            input.style.textAlign="center"
+            input.style.display="flex"
+            input.style.justifyContent="center"
+            input.style.alignItems="center"
+            input.innerHTML=document.getElementById('todo').value
 
 
 
