@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <input type="text" id="todo">
     <button id="btn" onclick="fun()">create to do</button>
 
 
@@ -63,6 +64,9 @@
             input.style.height = "100%"
             input.style.width = "60%"
             input.id="note" + (counter)
+            input.value=document.getElementById('todo').value
+            input.setAttribute("disabled", "");
+
 
 
             div.append(button1)
