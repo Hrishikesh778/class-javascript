@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="setData()">setData</button>
+    <button onclick="setDataAgain()">setDataAgain</button>
+    <button onclick="getData()">getData</button>
+    <button onclick="remData()">remData</button>
+
+    <button onclick="clearData()">clearData</button>
+    <script>
+        let obj = {
+            fname: "jai",
+            lname: "singh",
+            age: 12
+        }
+
+        let convToJsonString = JSON.stringify(obj)
+        // console.log(conttostring);
+        console.log(obj)
+
+
+        function setData() {
+
+            localStorage.setItem("user3", convToJsonString)
+        }
+
+        function setDataAgain(){
+            localStorage.setItem("user3","kunal")
+        }
+
+        function getData(){
+            let localData = JSON.parse(localStorage.getItem("user3"))
+            console.log(localData.fname,"localdata")
+        }
+
+        function remData(){
+            localStorage.removeItem('user3')
+        }
+
+        function clearData(){
+            localStorage.clear()
+        }
+
+        
+    </script>
+</body>
+
+</html>
