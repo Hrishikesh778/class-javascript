@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function copyCheckHona(result){
+            console.log('copy check ho gye')
+            result(pass, 2,12)
+        }
+
+        function result(pass, a,b) {
+            console.log('result aagya')
+            let c= a+b
+            if(c>20){
+                pass()
+            }else{
+                fail()
+            }
+        }
+
+        function pass() {
+            console.log('pass')
+        }
+        function fail() {
+            console.log('fail')
+        }
+        
+        copyCheckHona(result)
+    </script>
+</body>
+</html>
