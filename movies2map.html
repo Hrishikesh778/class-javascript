@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="filterMovie('horror')">Horror</button>
+    <button onclick="filterMovie('action')">action</button>
+    <button onclick="filterMovie('thriller')">Thriller</button>
+
+    <div id="div">
+
+    </div>
+
+    <script>
+        let data = [
+            {
+                movieName: "bahulbali",
+                actor: "Prabhas",
+                actress: "Anushka shetty",
+                category: "action"
+            },
+            {
+                movieName: "bahulbali2",
+                actor: "Prabhas",
+                actress: "Anushka shetty",
+                category: "action"
+            },
+            {
+                movieName: "Tumbhad",
+                actor: "Shah",
+                actress: "Amma",
+                category: "thriller"
+            },
+            {
+                movieName: "kantaara",
+                actor: "Aakash",
+                actress: "Aakashi",
+                category: "horror"
+            },
+            {
+                movieName: "fastx",
+                actor: "Harsh",
+                actress: "Harsha",
+                category: "action"
+            },
+            {
+                movieName: "The Conjuring",
+                actor: "Patrick Wilson",
+                actress: "Vera Farmiga",
+                category: "horror"
+            },
+            {
+                movieName: "Inception",
+                actor: "Leonardo DiCaprio",
+                actress: "Marion Cotillard",
+                category: "thriller"
+            },
+            {
+                movieName: "Joker",
+                actor: "Joaquin Phoenix",
+                actress: "Zazie Beetz",
+                category: "thriller"
+            },
+            {
+                movieName: "The Sixth Sense",
+                actor: "Bruce Willis",
+                actress: "Toni Collette",
+                category: "thriller"
+            },
+            {
+                movieName: "Se7en",
+                actor: "Brad Pitt",
+                actress: "Gwyneth Paltrow",
+                category: "thriller"
+            },
+            {
+                movieName: "13 Exorcisms",
+                actor: "Urko Olazabal",
+                actress: "María Romanillos",
+                category: "horror"
+            }
+        ]
+
+
+
+        function filterMovie(a) {
+
+            if (a == "action") {
+
+                let mapdata = data.map((val) => {
+                    if (val.category == 'action') {            
+                        return val.movieName
+                    }
+                    else {
+                        return 0
+                    }
+                })
+
+                createelement(mapdata)
+
+                console.log(mapdata, "mapdata")
+
+            }
+            else if (a == "horror") {
+
+                let mapdata = data.map((val) => {
+                    if (val.category == 'horror') {
+                        return val.movieName
+                    }
+                    else {
+                        return 0
+                    }
+
+                })
+
+                createelement(mapdata)
+
+                console.log(mapdata, "mapdata")
+            }
+
+            else if (a == "thriller") {
+
+                let mapdata = data.map((val) => {
+                    if (val.category == 'thriller') {
+                        return val.movieName
+                    }
+                    else {
+                        return 0
+                    }
+                })
+
+                createelement(mapdata)
+
+                console.log(mapdata, "mapdata")
+            }
+
+
+
+            function createelement(a) {
+                //let input = document.createElement("div")
+                let input= document.getElementById('div')
+                input.style.height = "auto"
+                input.style.width = "100%"
+                input.style.border = "1px solid"
+                // input.id = "note" + (counter)
+                input.style.backgroundColor = "#efefef"
+                input.style.textAlign = "center"
+                input.style.display = "flex"
+                input.style.justifyContent = "center"
+                input.style.alignItems = "center"
+
+
+                input.innerHTML = ""
+                for (i = 0; i < a.length; i++) {
+                    if (a[i] != 0) {
+                        input.innerHTML = input.innerHTML + "<br>" + a[i]
+                    }
+                }
+
+
+               
+            }
+         
+        }
+    </script>
+</body>
+
+</html>
