@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            height: auto;
+            width: 100%;
+            background-color: rgb(197, 197, 197);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" name="movietype" value="" id="1" onclick="moviefilter('action')">
+    <label for="1">action</label>
+
+    <input type="checkbox" name="movietype" value="" id="2" onclick="moviefilter('horror')">
+    <label for="2">horror</label>
+
+    <input type="checkbox" name="movietype" value="" id="3" onclick="moviefilter('thriller')">
+    <label for="3">thriller</label>
+
+
+    <div id="div">
+
+    </div>
+    <script>
+        let data = [
+            {
+                movieName: "bahulbali",
+                actor: "Prabhas",
+                actress: "Anushka shetty",
+                category: "action"
+            },
+            {
+                movieName: "bahulbali2",
+                actor: "Prabhas",
+                actress: "Anushka shetty",
+                category: "action"
+            },
+            {
+                movieName: "Tumbhad",
+                actor: "Shah",
+                actress: "Amma",
+                category: "thriller"
+            },
+            {
+                movieName: "kantaara",
+                actor: "Aakash",
+                actress: "Aakashi",
+                category: "horror"
+            },
+            {
+                movieName: "fastx",
+                actor: "Harsh",
+                actress: "Harsha",
+                category: "action"
+            },
+            {
+                movieName: "The Conjuring",
+                actor: "Patrick Wilson",
+                actress: "Vera Farmiga",
+                category: "horror"
+            },
+            {
+                movieName: "Inception",
+                actor: "Leonardo DiCaprio",
+                actress: "Marion Cotillard",
+                category: "thriller"
+            },
+            {
+                movieName: "Joker",
+                actor: "Joaquin Phoenix",
+                actress: "Zazie Beetz",
+                category: "thriller"
+            },
+            {
+                movieName: "The Sixth Sense",
+                actor: "Bruce Willis",
+                actress: "Toni Collette",
+                category: "thriller"
+            },
+            {
+                movieName: "Se7en",
+                actor: "Brad Pitt",
+                actress: "Gwyneth Paltrow",
+                category: "thriller"
+            },
+            {
+                movieName: "13 Exorcisms",
+                actor: "Urko Olazabal",
+                actress: "María Romanillos",
+                category: "horror"
+            }
+        ]
+
+
+        function moviefilter(a) {
+
+
+            let text = document.getElementById('div')
+
+            if (a == "action") {
+
+                let mapdata = data.filter((val) => {
+                    if (val.category == 'action') {
+                        return val.movieName
+                    }
+
+                })
+
+                let doc = document.getElementById("1")
+                //doc.value=mapdata
+
+                // console.log(mapdata.movieName, "mapdata")
+                if (doc.value == "") {
+                    for (i = 0; i < mapdata.length; i++) {
+                        
+                        doc.value +=  mapdata[i].movieName +"<br>" 
+
+
+
+                    }
+                }
+                else {
+                    doc.value="";
+                    for (i = 0; i < mapdata.length; i++) {
+                        
+                        doc.value +=  mapdata[i].movieName +"<br>"
+
+
+
+                    }
+                }
+
+            }
+
+            if (a == "horror") {
+                let mapdata = data.filter((val) => {
+                    if (val.category == 'horror') {
+                        return val.movieName
+                    }
+
+                })
+
+                let doc = document.getElementById("2")
+                //doc.value=mapdata
+
+                // console.log(mapdata.movieName, "mapdata")
+                if (doc.value == "") {
+                    for (i = 0; i < mapdata.length; i++) {
+
+                        doc.value +=  mapdata[i].movieName +"<br>" 
+
+
+
+                    }
+                }
+                else {
+                    doc.value="";
+                    for (i = 0; i < mapdata.length; i++) {
+
+                        doc.value +=  mapdata[i].movieName +"<br>" 
+
+
+
+                    }
+                }
+
+            }
+            if (a == "thriller") {
+                let mapdata = data.filter((val) => {
+                    if (val.category == 'thriller') {
+                        return val.movieName
+                    }
+
+                })
+
+                let doc = document.getElementById("3")
+                //doc.value=mapdata
+
+                // console.log(mapdata.movieName, "mapdata")
+                if (doc.value == "") {
+                    for (i = 0; i < mapdata.length; i++) {
+
+                        doc.value +=  mapdata[i].movieName +"<br>" 
+
+
+
+                    }
+                }
+                else {
+                    doc.value="";
+                    for (i = 0; i < mapdata.length; i++) {
+
+                        doc.value +=  mapdata[i].movieName +"<br>" 
+
+
+
+                    }
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+            let checkboxes = document.getElementsByName('movietype');
+
+            let result = "";
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    if (checkboxes[i] != 0) {
+                        if (result == "") {
+
+
+                            result = checkboxes[i].value
+                        }
+                        else {
+                            result = result + checkboxes[i].value
+                        }
+
+                    }
+                    
+                }
+            }
+
+            text.innerHTML = result
+
+        }
+    </script>
+</body>
+
+</html>
