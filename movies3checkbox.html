@@ -224,17 +224,15 @@
             let result = "";
             for (var i = 0; i < checkboxes.length; i++) {
                 if (checkboxes[i].checked) {
-                    if (checkboxes[i] != 0) {
+                    // if (checkboxes[i] != 0) {
                         if (result == "") {
-
-
                             result = checkboxes[i].value
                         }
                         else {
                             result = result + checkboxes[i].value
                         }
 
-                    }
+                    // }
                     
                 }
             }
