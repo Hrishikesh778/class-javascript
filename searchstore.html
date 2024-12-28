@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        .photocard {
+            /* border-color: brown;
+            border-style: solid; */
+            /* height: 300px; */
+            width: 200px;
+            background-color: aquamarine;
+
+            margin: 10px;
+            display: none;
+
+        }
+
+        .photocard .pcimg {
+            height: 200px;
+            width: auto;
+            background-color: rgb(232 222 200);
+            padding: 5px;
+        }
+
+        .pctext {
+
+            height: 100px;
+            width: 100%;
+            background-color: rgb(232 222 200);
+            text-align: center;
+            color: brown;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="inputValue">
+    <button onclick="filterMovie()">Search</button>
+
+   
+    <div class="photocard" id="pc">
+            <div class="pcimg">
+                <img style="height: 100% ;width: 100%;">
+            </div>
+            <div class="pctext" id="ptext">
+
+           
+            </div>
+
+        </div>
+    
+
+    <script>
+        let data = [
+            {
+                Name: "dress1",
+                text: "₹1748",
+                link: "images/female1.jpg",
+                category: "ethnic"
+            },
+            {
+                Name: "saree1",
+                text: "₹2748",
+                link: "images/saree.webp",
+                category: "sarees"
+            },
+            {
+                Name: "dress2",
+                text: "₹4748",
+                link: "images/female2.webp",
+                category: "ethnic"
+            }
+           
+        ]
+
+
+        function filterMovie() {
+            let input = document.getElementById('inputValue').value
+                    console.log(input,"inputValue")
+
+                    let filterData = data.filter((val)=>{
+                        return val.Name == input.toLowerCase()
+                        // console.log(val,"fdbfg")
+                    })
+
+                    console.log(filterData,"filterData")
+
+                    if(input!="" && filterData[0]!=undefined)
+                    {
+                        getelement(filterData)
+                    }
+                    else{
+                        let div= document.getElementById('pc')
+                        div.style.display='none'
+                    }
+
+            
+        }
+
+
+        function getelement(data){
+            let div= document.getElementById('pc')
+            div.style.display='block'
+
+            let img=document.querySelector(".pcimg img")
+            img.setAttribute('src',data[0].link)
+
+            let text= document.getElementById('ptext')
+            text.innerHTML=" <br><h1>"+ data[0].text+"</h1>"
+           
+        }
+
+        // function createElement(){
+        //     let div = document.createElement('div')
+        //     div.className = "photocard"
+
+        //     let divchild1 =document.createElement('div')
+        //     divchild1.className='pcimg'
+
+
+        //     let divchild2 =document.createElement('div')
+        //     divchild2.className='pctext'
+
+
+        //     let img=document.createElement('img')
+        //     img.setAttribute('src','images/female1.jpg')
+        //     img.setAttribute('height','100%')
+        //     img.setAttribute('width','100%')
+            
+
+        //     let text = document.createElement
+
+
+
+
+        //     divchild1.append(img)
+
+        //     div.append(divchild1)
+        //     div.append(divchild2)
+
+        //     document.body.appendChild(div)
+        // }
+    </script>
+</body>
+
+</html>
