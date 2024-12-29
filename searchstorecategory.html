@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .photocard {
+            /* border-color: brown;
+            border-style: solid; */
+            /* height: 300px; */
+            width: 200px;
+            background-color: aquamarine;
+
+            margin: 10px;
+            /* display: flex; */
+
+        }
+
+        .photocard .pcimg {
+            height: 200px;
+            width: auto;
+            background-color: rgb(232 222 200);
+            padding: 5px;
+        }
+
+        .pctext {
+
+            height: 100px;
+            width: 100%;
+            background-color: rgb(232 222 200);
+            text-align: center;
+            color: brown;
+
+        }
+
+        .commondiv {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="1" value="" id="1" onclick="clothfilter('dress','1')">
+    <label for="1">Dress</label>
+
+    <input type="checkbox" name="2" value="" id="2" onclick="clothfilter('sarees','2')">
+    <label for="2">Sarees</label>
+
+    <!-- <div id="maindiv">
+
+    </div> -->
+
+    <script>
+        let data = [
+            {
+                Name: "dress1",
+                text: "₹1748",
+                link: "images/female1.jpg",
+                category: "dress"
+            },
+            {
+                Name: "saree1",
+                text: "₹2748",
+                link: "images/saree.webp",
+                category: "sarees"
+            },
+            {
+                Name: "dress2",
+                text: "₹4748",
+                link: "images/female2.webp",
+                category: "dress"
+            },
+            {
+                Name: "dress3",
+                text: "₹5748",
+                link: "images/female4.jpg",
+                category: "dress"
+            },
+            {
+                Name: "saree2",
+                text: "₹6748",
+                link: "images/saree2.webp",
+                category: "sarees"
+            }
+
+
+        ]
+
+
+
+        function clothfilter(category, id) {
+
+            let checkboxes = document.getElementsByName('clothtype');
+
+            // let result = "";
+            // for (var i = 0; i < checkboxes.length; i++) {
+            //     if (checkboxes[i].checked) {
+            //         // if (checkboxes[i] != 0) {
+            //             if (result == "") {
+            //                 result = checkboxes[i].value
+            //             }
+            //             else {
+            //                 result = result + checkboxes[i].value
+            //             }
+
+            //         // }
+
+            //     }
+            // }
+
+            // text.innerHTML = result
+
+            // for (var i = 0; i < checkboxes.length; i++) {
+            //     if (checkboxes[i].checked.na==true) {
+            //         createElement()
+            //     }
+            //     else{
+            //         removeElement()
+            //     }
+
+
+
+            if (category == 'dress') {
+                let checkbox = document.getElementById(id);
+                if (checkbox.checked == true) {
+                    createElement()
+                }
+                else{
+                    removeElement()
+                }
+
+            }
+
+            if (category == 'sarees') {
+                let checkbox = document.getElementById(id);
+                if (checkbox.checked == true) {
+                    createElement()
+                }
+                else{
+                    removeElement()
+                }
+
+            }
+
+
+            // createElement()
+        }
+
+
+
+        let maindiv = document.createElement("div");
+        maindiv.id = "maindiv"
+        maindiv.className = "commondiv"
+
+
+        function createElement() {
+
+
+
+            let div = document.createElement('div')
+            div.className = "photocard"
+            div.id = "photocard1"
+
+            let divchild1 = document.createElement('div')
+            divchild1.className = 'pcimg'
+
+
+            let divchild2 = document.createElement('div')
+            divchild2.className = 'pctext'
+            divchild2.innerHTML = " <br><h1> 1234 </h1>"
+
+
+            let img = document.createElement('img')
+            img.setAttribute('src', 'images/female1.jpg')
+            img.setAttribute('height', '100%')
+            img.setAttribute('width', '100%')
+
+
+            // let text = document.createElement()
+
+
+
+
+            divchild1.append(img)
+
+            div.append(divchild1)
+            div.append(divchild2)
+
+            maindiv.append(div)
+            document.body.appendChild(maindiv)
+        }
+
+
+
+        function removeElement() {
+            let elem = document.getElementById('photocard1')
+
+            elem.parentNode.removeChild(elem);
+        }
+    </script>
+</body>
+
+</html>
