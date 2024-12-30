@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- block 1 -->
+    <div style="background-color:  rgb(216, 236, 229);height: 80px;width: 100%;align-content: center;">
+        <div style="background-color:azure;height: 60px;width: 100px; margin: 10px;float: left;">
+            <a href="index2.html"><button style="height: 100%;width: 100%; border: 0px;">HOME</button></a>
+        </div>
+        <div style="background-color:azure;height: 60px;width: 100px; margin: 10px;float: left;">
+            <a href="login.html"><button style="height: 100%;width: 100%; border: 0px;">Login</button></a>
+        </div>
+        <div style="background-color:azure;height: 60px;width: 100px; margin: 10px;float: left;">
+            <a href="registration.html"><button style="height: 100%;width: 100%; border: 0px;">Registration</button></a>
+        </div>
+
+
+
+        <div id="profilename"
+            style="background-color:rgb(255, 255, 255);height: 60px;width: 60px;float: right; margin: 10px;border-radius: 50%; display: flex;justify-content: center; align-items: center;">
+            <!-- <img style="height: 60px;width: 60px;" src="./images/81009096.png"> -->
+
+
+             
+        </div>
+
+
+    </div>
+
+
+    <script>
+           let profilename= document.getElementById('profilename')
+           let localData = JSON.parse(localStorage.getItem("user1"))
+           
+           let fletter=localData.fname1[0]
+           let lletter=localData.lname1[0]
+
+           console.log(fletter.toUpperCase(),lletter.toUpperCase())
+        
+            profilename.innerHTML=fletter.toUpperCase()+lletter.toUpperCase()
+
+
+
+    </script>
+</body>
+
+</html>
