@@ -201,12 +201,12 @@
             let confirmpass = document.getElementById("confirmpass").value
 
 
-            if (fname == "" || lname == "" || email == "" || number == "") {
+            if (fname == "" || lname == "" || email == "" || number == "" || pass=="" || confirmpass=="") {
                 alert("please fill all fields")
 
                 return false
             }
-            else if (number <= 10) {
+            else if (number.length < 10 || number.length>10) {
                 alert("enter proper number")
                 return false
             }
