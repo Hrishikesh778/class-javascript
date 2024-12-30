@@ -103,13 +103,13 @@
 
                 return false
             }
-            else if(email==localData.email1 && pass==localData.password1){
+            else if(email==localData.email1 && pass==localData.password1 && localData.password1 != null && localData.email1 !=null ){
                 //console.log(localData.email1,localData.password1)
                 return true
             }
             
             else{
-
+                alert("please enter valid details")
                 return false
             }
 
