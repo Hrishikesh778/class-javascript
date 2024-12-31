@@ -35,7 +35,7 @@
 
         }
 
-        .commondiv {
+        #maindiv {
             display: flex;
             flex-wrap: wrap;
         }
@@ -43,15 +43,15 @@
 </head>
 
 <body>
-    <input type="checkbox" name="1" value="" id="1" onclick="clothfilter('dress','1')">
+    <input type="checkbox" name="cloth" value="" id="1" onclick="clothfilter('dress')">
     <label for="1">Dress</label>
 
-    <input type="checkbox" name="2" value="" id="2" onclick="clothfilter('sarees','2')">
+    <input type="checkbox" name="cloth" value="" id="2" onclick="clothfilter('sarees')">
     <label for="2">Sarees</label>
 
-    <!-- <div id="maindiv">
-
-    </div> -->
+    <input type="checkbox" value="" id="3" onclick="clothfilter('all')">
+    <label for="3">All</label>
+    <div id="maindiv"></div>
 
     <script>
         let data = [
@@ -91,115 +91,116 @@
 
 
 
-        function clothfilter(category, id) {
+        function clothfilter(category) {
+            let filterData = data.filter((val) => {
+                return val.category == category
+            })
 
-            let checkboxes = document.getElementsByName('clothtype');
+            let pp = document.getElementById('1').checked
+            console.log(pp)
 
-            // let result = "";
-            // for (var i = 0; i < checkboxes.length; i++) {
-            //     if (checkboxes[i].checked) {
-            //         // if (checkboxes[i] != 0) {
-            //             if (result == "") {
-            //                 result = checkboxes[i].value
-            //             }
-            //             else {
-            //                 result = result + checkboxes[i].value
-            //             }
-
-            //         // }
-
-            //     }
-            // }
-
-            // text.innerHTML = result
-
-            // for (var i = 0; i < checkboxes.length; i++) {
-            //     if (checkboxes[i].checked.na==true) {
-            //         createElement()
-            //     }
-            //     else{
-            //         removeElement()
-            //     }
+            console.log(filterData, "filter")
 
 
+            let checkboxdresss = document.getElementById('1');
+            let checkboxsaree = document.getElementById('2');
+            let checkboxall = document.getElementById('3');
 
-            if (category == 'dress') {
-                let checkbox = document.getElementById(id);
-                if (checkbox.checked == true) {
-                    createElement()
+
+            if (checkboxall.checked == false) {
+                checkboxall.checked=false
+
+                if (checkboxdresss.checked == true) {
+
+                    if (checkboxdresss.value == "") {
+                        checkboxdresss.value = mapdataall()
+                    }
+
                 }
-                else{
-                    removeElement()
+
+                else if (checkboxsaree.checked == true) {
+                    if (checkboxsaree.value == "") {
+                        checkboxsaree.value = mapdataall()
+                    }
+                   
                 }
+
+
+                let checkboxes = document.getElementsByName('cloth')
+
+                let result = "";
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        // if (checkboxes[i] != 0) {
+                        if (result == "") {
+                            result = checkboxes[i].value
+                        }
+                        else {
+                            result = result + checkboxes[i].value
+                        }
+
+                        // }
+
+                    }
+                    document.getElementById('maindiv').innerHTML = result
+
+
+                }
+            }
+            else {
+
+                document.getElementById('maindiv').innerHTML = ""
+                checkboxdresss.checked=false
+                checkboxsaree.checked=false
+
+                let mapdata2 = data.map((val) => {
+                    return `<div class="photocard">
+                             <div class="pcimg">
+                                <img style="height: 100% ;width: 100%;" src=${val.link}>
+                            </div>
+                            <div class="pctext">
+                              ${val.Name}
+                              <br>
+                              <h1>${val.text}</h1>
+                            </div>
+                        </div>
+                        `
+                })
+
+                document.getElementById('maindiv').innerHTML = mapdata2.join("")
+            }
+
+
+
+            function mapdataall() {
+                let mapdata = filterData.map((val) => {
+                    return `<div class="photocard">
+                             <div class="pcimg">
+                                <img style="height: 100% ;width: 100%;" src=${val.link}>
+                            </div>
+                            <div class="pctext">
+                              ${val.Name}
+                              <br>
+                              <h1>${val.text}</h1>
+                            </div>
+                        </div>
+                        `
+                })
+
+                let map = mapdata.join("")
+                let maindiv = document.getElementById('maindiv')
+
+                return map
 
             }
 
-            if (category == 'sarees') {
-                let checkbox = document.getElementById(id);
-                if (checkbox.checked == true) {
-                    createElement()
-                }
-                else{
-                    removeElement()
-                }
-
-            }
 
 
-            // createElement()
+
         }
 
 
 
-        let maindiv = document.createElement("div");
-        maindiv.id = "maindiv"
-        maindiv.className = "commondiv"
-
-
-        function createElement() {
-
-
-
-            let div = document.createElement('div')
-            div.className = "photocard"
-            div.id = "photocard1"
-
-            let divchild1 = document.createElement('div')
-            divchild1.className = 'pcimg'
-
-
-            let divchild2 = document.createElement('div')
-            divchild2.className = 'pctext'
-            divchild2.innerHTML = " <br><h1> 1234 </h1>"
-
-
-            let img = document.createElement('img')
-            img.setAttribute('src', 'images/female1.jpg')
-            img.setAttribute('height', '100%')
-            img.setAttribute('width', '100%')
-
-
-            // let text = document.createElement()
-
-
-
-
-            divchild1.append(img)
-
-            div.append(divchild1)
-            div.append(divchild2)
-
-            maindiv.append(div)
-            document.body.appendChild(maindiv)
-        }
-
-
-
-        function removeElement() {
-            let elem = document.getElementById('photocard1')
-
-            elem.parentNode.removeChild(elem);
-        }
     </script>
 </body>
 
