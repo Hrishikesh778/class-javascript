@@ -1,11 +1,9 @@
 function navbar(arr){
     let returnData = arr.map((val)=>{
         return `
-        <ul>
-            <li>${val}</li>
-        </ul>`
-    })
-    return returnData
+            <a href=${val.link}><li>${val.item}</li></a>
+    `})
+    return returnData.join(" ")
 }
 
 export default navbar

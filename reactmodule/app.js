@@ -1,17 +1,19 @@
+import navbar from "./navbar.js";
 import footer from "./footer.js";
 import cards from "./cards.js";
-import navbar from "./navbar.js";
+import { navbarArr } from "./data.js";
+import { cardData } from "./data.js";
 
-function app() {
-    let arr = ['Home', 'About',  'Contact', 'services', 'Help']
 
-    return ` 
-    ${navbar(arr)}
-    ${cards("./image/camera.jfif", "A girl standing with a camera")}
-    ${cards("./image/download_(1).jfif", "A girl standing with a camera")}
-    ${cards("./image/ww.jfif", "A girl standing with a camera")}
+
+function app(){
+    return `
+    <div class='nav'>
+        ${navbar(navbarArr)}
+    </div>
+    ${cards(cardData)}
     ${footer()}
     `
 }
 
-export default app
+export {app, navbarArr}
