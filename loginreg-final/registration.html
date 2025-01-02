@@ -203,7 +203,7 @@
             let confirmpass = document.getElementById("confirmpass").value
 
             let regex =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
 
 
             if (fname == "" || lname == "" || email == "" || number == "" || pass == "" || confirmpass == "") {
@@ -215,7 +215,7 @@
                 alert("enter proper number")
                 return false
             }
-            else if(regex.test(pass) != true){
+            else if (regex.test(pass) != true) {
                 alert("enter proper password")
                 return false
             }
@@ -229,42 +229,42 @@
                 let getLocalData = JSON.parse(localStorage.getItem("user1"))
 
                 if (getLocalData == null) {
+                    getLocalData = []
+                    // let obj = {
+                    //     fname1: fname,
+                    //     lname1: lname,
+                    //     email1: email,
+                    //     number1: number,
+                    //     password1: pass
 
-                    let obj = {
-                        fname1: fname,
-                        lname1: lname,
-                        email1: email,
-                        number1: number,
-                        password1: pass
-
-                    }
-                    console.log(obj)
-                    getLocalData = [obj]
-                    let convToJsonString = JSON.stringify(getLocalData)
-                    localStorage.setItem("user1", convToJsonString)
+                    // }
+                    // console.log(obj)
+                    // getLocalData = [obj]
+                    // let convToJsonString = JSON.stringify(getLocalData)
+                    // localStorage.setItem("user1", convToJsonString)
                 }
-                else {
+                //else {
 
-                    let getFormData = {
-                        fname1: fname,
-                        lname1: lname,
-                        email1: email,
-                        number1: number,
-                        password1: pass
-                    }
-                    console.log(getFormData)
-
-                    try {
-                        getLocalData = [...getLocalData, getFormData]
-
-                        localStorage.setItem('user1', JSON.stringify(getLocalData))
-                    }
-                    catch(e){
-                        console.log(e);
-                    }
-
-
+                let getFormData = {
+                    fname1: fname,
+                    lname1: lname,
+                    email1: email,
+                    number1: number,
+                    password1: pass
                 }
+                console.log(getFormData)
+
+                try {
+                    getLocalData = [...getLocalData, getFormData]
+
+                    localStorage.setItem('user1', JSON.stringify(getLocalData))
+                }
+                catch (e) {
+                    console.log(e);
+                }
+
+
+                //}
 
 
 

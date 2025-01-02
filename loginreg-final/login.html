@@ -80,6 +80,7 @@
                 <br>
                 <br>
                 <br>
+                <a href="registration.html">Register now</a>
             </form>
 
         </div>
@@ -111,7 +112,8 @@
             else if(email==filterData[0].email1 && pass==filterData[0].password1 && filterData[0].password1 != null && filterData[0].email1 !=null ){
                 //console.log(localData.email1,localData.password1)
 
-
+                localStorage.setItem('isloggedinfname', filterData[0].fname1)
+                localStorage.setItem('isloggedinlname', filterData[0].lname1)
                 return true
             }
             

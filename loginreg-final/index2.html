@@ -26,7 +26,9 @@
         <div style="background-color:azure;height: 60px;width: 100px; margin: 10px;float: left;">
             <a href="registration.html"><button style="height: 100%;width: 100%; border: 0px;">Registration</button></a>
         </div>
-
+        <div style="background-color:azure;height: 60px;width: 100px; margin: 10px;float: left;">
+            <button onclick="logout()" style="height: 100%;width: 100%; border: 0px;">Logout</button>
+        </div>
 
 
         <div id="profilename"
@@ -34,7 +36,7 @@
             <!-- <img style="height: 60px;width: 60px;" src="./images/81009096.png"> -->
 
 
-             
+
         </div>
 
 
@@ -42,25 +44,31 @@
 
 
     <script>
-           let profilename= document.getElementById('profilename')
-           let localData = JSON.parse(localStorage.getItem("user1"))
-           
-
-           let filterData = localData.filter((val)=>{
-                        return val.email1 == email.toLowerCase()
-                        // console.log(val,"fdbfg")
-             })
+        let profilename = document.getElementById('profilename')
+        let localData = JSON.parse(localStorage.getItem("user1"))
+        let isloggedinfname = localStorage.getItem("isloggedinfname")
+        let isloggedinlname = localStorage.getItem("isloggedinlname")
 
 
-           let fletter=localData.fname1[0]
-           let lletter=localData.lname1[0]
-
-           console.log(fletter.toUpperCase(),lletter.toUpperCase())
-        
-            profilename.innerHTML=fletter.toUpperCase()+lletter.toUpperCase()
+        //    let filterData = localData.filter((val)=>{
+        //                 return val.email1 == email.toLowerCase()
+        //                 // console.log(val,"fdbfg")
+        //      })
 
 
+        let fletter = isloggedinfname[0]
+        let lletter = isloggedinlname[0]
 
+        console.log(fletter.toUpperCase(), lletter.toUpperCase())
+
+        profilename.innerHTML = fletter.toUpperCase() + lletter.toUpperCase()
+
+
+        function logout() {
+            localStorage.removeItem("isloggedinfname")
+            localStorage.removeItem("isloggedinlname")
+            window.location.href = "login.html"
+        }
     </script>
 </body>
 
