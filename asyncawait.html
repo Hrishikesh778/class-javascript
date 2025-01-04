@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // async and await 
+
+
+         async function copyCheckHona(){
+            try {
+                await result()
+                await pass()
+                await celeb()
+                
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+
+        function result(){
+            console.log('result')
+        }
+
+        let resturnValue = copyCheckHona()
+        console.log(resturnValue,"resturnValue")
+
+        resturnValue.then((data)=>{
+            console.log(data)
+        })
+        // result()
+
+    </script>
+</body>
+</html>
