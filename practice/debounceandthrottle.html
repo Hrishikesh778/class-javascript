@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <div>
+        <b>Default:</b>
+        <span id="default"></span>
+    </div>
+    <div>
+        <b>Debounce:</b>
+        <span id="Debounce"></span>
+    </div>
+    <div>
+        <b>Throttle:</b>
+        <span id="Throttle"></span>
+    </div>
+
+
+    <script>
+        let input = document.querySelector("input")
+        let defaultText = document.getElementById("default")
+        let debounceText = document.getElementById("Debounce")
+        let throttleText = document.getElementById("Throttle")
+
+
+        let updatedeboucetext=debounce((text)=>{
+            debounceText.textContent = text
+        },250)
+
+        let updateThrottleText=throttle((text)=>{
+            throttleText.textContent = text
+        })
+
+        //defaultText.textContent=""
+        input.addEventListener("input", e => {
+
+            defaultText.textContent = e.target.value
+            updatedeboucetext(e.target.value)
+            updateThrottleText(e.target.value)
+        })
+
+
+        function debounce(cb, delay = 1000) {
+            let timeout
+            return (...args)=>{
+                clearTimeout(timeout)
+
+               timeout= setTimeout(()=>{
+                    cb(...args)
+                }, delay)
+            }
+        }
+
+
+        function throttle(cb, delay =1000){
+            let shouldwait = false
+            let waitingArgs
+
+            const timeoutfunc=()=>{
+                    if(waitingArgs == null){
+                        shouldwait = false
+                    }else{
+                        cb(...waitingArgs)
+                        waitingArgs =null
+                        setTimeout(timeoutfunc,delay)
+                    }
+                    
+                }
+
+            return (...args)=>{
+                if(shouldwait) {
+                    waitingArgs =args
+                    return
+                }
+                 
+                cb(...args)
+                shouldwait =true
+
+                setTimeout(timeoutfunc,delay)
+            }
+        }
+    </script>
+</body>
+
+</html>
