@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr =[1,2,3,4,5,6]
+        // let brr=arr//[...arr]
+        // brr[0]=10
+        // console.log(brr)
+        // console.log(arr)
+
+        //to fix above shallow copy
+        // let arr =[1,2,3,4,5,6]
+        // let brr=[...arr]
+        // brr[0]=10
+        // console.log(brr)
+        // console.log(arr)
+
+        //to fix array inside array deep copy
+        let arr = [1, 2, 3, [4, 5, 6]]
+        let brr = [...arr]
+        arr = JSON.parse(JSON.stringify(arr))
+        brr[3][0] = 10
+        console.log(brr)
+        console.log(arr)
+
+
+        //original way
+        // let obj = {
+        //     fname: "ram",
+        //     lname: "gupta"
+        // }
+
+        // let copyobj = obj;
+        // copyobj.fname = "hrishikesh";
+        // console.log(copyobj)
+        // console.log(obj)
+
+        //shallow copy obj
+
+        // let obj = {
+        //     fname: "ram",
+        //     lname: "gupta"
+        // }
+
+        // let copyobj = {...obj};
+        // copyobj.fname = "hrishikesh";
+        // console.log(copyobj)
+        // console.log(obj)
+
+        //deep copy obj
+
+        let obj = {
+            fname: "ram",
+            lname: "gupta",
+            address: {
+                city: "jalgaon",
+                State: "Maharashtra"
+
+            }
+        }
+
+        let copyobj =  JSON.parse(JSON.stringify(obj))
+        copyobj.address.city = "kalyan";
+        console.log(copyobj)
+        console.log(obj)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
